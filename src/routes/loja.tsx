@@ -1,5 +1,5 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { useState } from "react";
+import React, { useState } from "react";
 import { ShoppingCart, ArrowLeft, Menu, X, ChevronLeft, ChevronRight, Copy, Check, QrCode } from "lucide-react";
 
 export const Route = createFileRoute("/loja")({
@@ -255,20 +255,7 @@ function LojaPage() {
                 key={produto.id}
                 className="group flex flex-col rounded-2xl bg-surface border border-border overflow-hidden hover:border-primary/50 transition-all hover:-translate-y-1"
               >
-                {/*
-                 Imagem 
-                <div className="aspect-square relative bg-surface-elevated overflow-hidden">
-                  <div className="absolute inset-0 image-placeholder flex items-center justify-center">
-                    <div className="flex flex-col items-center gap-2 text-muted-foreground/60">
-                      <div className="w-10 h-10 rounded-full bg-primary/15 border border-primary/30 flex items-center justify-center text-primary">
-                        <ShoppingCart size={18} />
-                      </div>
-                      <span className="text-xs uppercase tracking-[0.2em]">Imagem</span>
-                    </div>
-                  </div>
-                </div>
-                */}
-
+                
                 {/* Galeria de Imagens do Produto */}
                 <GaleriaImagens imagens={produto.imagem} nome={produto.nome} />
 
@@ -293,8 +280,6 @@ function LojaPage() {
                     <QrCode size={18} />
                     Comprar via Pix
                   </button>
-                    <ShoppingCart size={18} />
-                    Comprar
                 </div>
               </div>
             ))}
